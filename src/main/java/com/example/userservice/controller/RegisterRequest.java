@@ -1,37 +1,13 @@
-package com.example.userservice.model;
+package com.example.userservice.controller;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-
-@Entity
-@Table(name = "person")
-public class User {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "Id_person")
-    private Long id;  // Измените на имя вашего поля с автоинкрементом
-    @Column(name = "e_mail")
+public class RegisterRequest {
     private String email;
     private String login;
     private String password;
     private String role;
     private String name;
 
-    // Getters and setters
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
+    // Getters and Setters
     public String getEmail() {
         return email;
     }
@@ -72,3 +48,4 @@ public class User {
         this.name = name;
     }
 }
+
