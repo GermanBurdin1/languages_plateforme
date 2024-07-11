@@ -21,6 +21,12 @@ public class AuthController {
     @Autowired
     private UserService userService;
 
+    @GetMapping("/login")
+    public String showLoginPage() {
+        logger.info("Login page requested");
+        return "login";
+    }
+
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest loginRequest) {
         logger.info("Login attempt for email: {}", loginRequest.getEmail());
